@@ -1,19 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
+import Root from './components/root';
 
-class Root extends React.Component {
-  render() {
-    return(
-      <div>
-        John
-      </div>
-    );
-  }
-}
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   const root = document.getElementById('root');
+//   let store = configureStore();
+//   ReactDOM.render(<Root store={store}/>, root);
+// });
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
-  let store = configureStore();
-  ReactDOM.render(<Root store={store}/>, root);
+
+  ReactDOM.render(<Root />, root);
 });
