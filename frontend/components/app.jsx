@@ -7,11 +7,11 @@ import {
 	Link,
 	HashRouter
 } from 'react-router-dom';
-
+import LoanInputs from './loan_inputs/loan_inputs';
 
 const App = () => (
 	<div className='main-div'>
-		John
+		<LoanInputs/>
 	</div>
 );
 
