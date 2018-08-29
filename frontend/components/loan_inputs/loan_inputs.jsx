@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
+import formHeader from '../../../key';
 
 class LoanInputs extends Component {
   constructor(props) {
@@ -8,8 +8,8 @@ class LoanInputs extends Component {
     this.state = {
       loanSize: "",
       creditScore: "",
-      propertyType: "",
-			occupancy: ""
+      propertyType: "SingleFamily",
+			occupancy: "Primary"
     };
     this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
@@ -20,14 +20,15 @@ class LoanInputs extends Component {
 	}
 
   handleSubmit(e) {
+    console.log(this.state);
     e.preventDefault();
-
+    this.props.fetchResponse(this.state, formHeader);
 
   }
 
 
   render() {
-
+    
     return (
       <div className='inputs-div'>
         <form className='inputs-form'>
@@ -66,7 +67,7 @@ class LoanInputs extends Component {
             </select>
           </label>
           <br/>
-          <input type="submit" value="Quote Rates"></input>
+          <input type="submit" value="Quote Rates" onClick={ this.handleSubmit }></input>
         </form>
       </div>
     );
